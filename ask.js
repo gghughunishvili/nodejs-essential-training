@@ -6,8 +6,12 @@ const questions = [
     "Why are you here?"
 ];
 
-collectAnswers(questions, (answers) => {
+const answerEvents = collectAnswers(questions, (answers) => {
     console.log("Thanks for using this app!");
     console.log(answers);
     process.exit();
+});
+
+answerEvents.on("answer", answer => {
+    console.log(`the answer: ${answer}`);
 });
